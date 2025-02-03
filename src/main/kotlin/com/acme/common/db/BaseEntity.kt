@@ -14,8 +14,6 @@ import java.time.LocalDateTime
 
 @MappedSuperclass
 @QuerySupertype
-//@Entity
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 abstract class BaseEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
