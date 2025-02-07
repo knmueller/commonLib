@@ -1,17 +1,18 @@
 [versions]
 ksp = "2.1.0-1.0.29"
 spring-boot = "3.4.+"
+openfeign = "6.10.+" # Fails with 6.10. Passes with openfeign fix in a locally built "6.11+" version
 
 [libraries]
-querydsl-openfeign-core = { module = "io.github.openfeign.querydsl:querydsl-core", version = "6.10.1" }
+querydsl-openfeign-core = { module = "io.github.openfeign.querydsl:querydsl-core", version.ref = "openfeign" }
+querydsl-openfeign-apt = { module = "io.github.openfeign.querydsl:querydsl-apt", version.ref = "openfeign" }
+querydsl-openfeign-jpa = { module = "io.github.openfeign.querydsl:querydsl-jpa", version.ref = "openfeign" }
 spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
 spring-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
-#spring-starter-security = { module = "org.springframework.boot:spring-boot-starter-security"}
 
-ksp-querydsl-codegen = { module = "io.github.openfeign.querydsl:querydsl-ksp-codegen", version = "6.10.1" }
+ksp-querydsl-codegen = { module = "io.github.openfeign.querydsl:querydsl-ksp-codegen", version.ref = "openfeign" }
 
 
 [plugins]
-querydsl = { id = "com.ewerk.gradle.plugins.querydsl", version = "1.0.10" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 maven-publish = { id = "maven-publish" }
